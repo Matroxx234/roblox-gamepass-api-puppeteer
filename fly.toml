@@ -1,0 +1,15 @@
+app = "roblox-api-puppeteer"
+
+[env]
+PORT = "10000"
+
+[build]
+builder = "heroku/buildpacks:20"
+
+[[services]]
+  internal_port = 10000
+  protocol = "tcp"
+
+  [[services.ports]]
+    handlers = ["http"]
+    port = 80
